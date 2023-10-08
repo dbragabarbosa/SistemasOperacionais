@@ -3,7 +3,7 @@ set -u
 
 i=1
 
-gcc -g -Wall -I. tests/test$i.c dccthread.o dlist.o -o test$i -lrt &>> gcc.log
+gcc -g -Wall -I. tests/test$i.c dccthread.o dlist.o -o test$i -lrt >> gcc.log 2>&1
 if [ ! -x test$i ] ; then
     echo "[$i] compilation error"
     exit 1 ;
